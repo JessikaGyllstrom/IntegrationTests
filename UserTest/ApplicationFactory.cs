@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+
 public class ApplicationFactory<T> : WebApplicationFactory<T>
     where T : class
 {
@@ -30,6 +31,7 @@ public class ApplicationFactory<T> : WebApplicationFactory<T>
 
       // Delete data 
       context.Database.EnsureDeleted();
+
       // Create new data
       context.Database.EnsureCreated();
 

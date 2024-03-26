@@ -1,13 +1,6 @@
-using System.Net;
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
+using System.Text;
 
 namespace UserTest;
 
@@ -54,9 +47,9 @@ public class UserTest : IClassFixture<ApplicationFactory<BU2Todo.Program>>
     var user = new { Email = "test@email.com", Password = "Abc123!" };
 
     var content = new StringContent(
-                JsonSerializer.Serialize(user),
-                Encoding.UTF8,
-                "application/json");
+      JsonSerializer.Serialize(user),
+      Encoding.UTF8,
+      "application/json");
 
     // Act
     var request = await client.PostAsync("/login", content);
