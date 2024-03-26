@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace RoleTest;
+
 public class ApplicationFactory<T> : WebApplicationFactory<T>
     where T : class
 {
